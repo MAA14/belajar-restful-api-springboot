@@ -10,6 +10,7 @@ import maa.restful.model.ContactResponse;
 import maa.restful.model.CreateContactRequest;
 import maa.restful.model.UpdateContactRequest;
 import maa.restful.model.WebResponse;
+import maa.restful.repository.AddressRepository;
 import maa.restful.repository.ContactRepository;
 import maa.restful.repository.UserRepository;
 import maa.restful.service.ValidationService;
@@ -55,8 +56,12 @@ class ContactControllerTest {
     @Autowired
     private ContactBuilder contactBuilder;
 
+    @Autowired
+    private AddressRepository addressRepository;
+
     @BeforeEach
     void setup() throws Exception{
+        addressRepository.deleteAll();
         contactRepository.deleteAll();
         userRepository.deleteAll();
         userAdmin.reset();

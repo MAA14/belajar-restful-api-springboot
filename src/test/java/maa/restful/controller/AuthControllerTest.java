@@ -7,6 +7,8 @@ import maa.restful.entity.User;
 import maa.restful.model.LoginUserRequest;
 import maa.restful.model.TokenResponse;
 import maa.restful.model.WebResponse;
+import maa.restful.repository.AddressRepository;
+import maa.restful.repository.ContactRepository;
 import maa.restful.repository.UserRepository;
 import maa.restful.security.BCrypt;
 import org.junit.jupiter.api.BeforeEach;
@@ -43,9 +45,17 @@ class AuthControllerTest {
     @Autowired
     private UserAdmin userAdmin;
 
+    @Autowired
+    private ContactRepository contactRepository;
+
+    @Autowired
+    private AddressRepository addressRepository;
+
     @BeforeEach
     public void setup() {
         // Reset database
+        addressRepository.deleteAll();
+        contactRepository.deleteAll();
         userRepository.deleteAll();
 
         // Biar this.admin di userAdmin ikutan kereset
