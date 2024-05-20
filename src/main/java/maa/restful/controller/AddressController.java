@@ -52,7 +52,6 @@ public class AddressController {
 
     @GetMapping(
             path = "/api/contacts/{contactId}/addresses/{addressId}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<AddressResponse> get(User user,
@@ -65,7 +64,6 @@ public class AddressController {
 
     @DeleteMapping(
             path = "/api/contacts/{contactId}/addresses/{addressId}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<String> delete(User user,
@@ -78,7 +76,6 @@ public class AddressController {
 
     @GetMapping(
             path = "/api/contacts/{contactId}/addresses",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<List<AddressResponse>> lists(User user,

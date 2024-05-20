@@ -64,7 +64,6 @@ public class ContactController {
 
     @GetMapping(
             path = "/api/contacts",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<List<ContactResponse>> search(User user,
