@@ -55,7 +55,6 @@ public class ContactController {
 
     @GetMapping(
             path = "/api/contacts/{contactId}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public WebResponse<ContactResponse> get(User user, @PathVariable("contactId") String contactId) {
